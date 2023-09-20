@@ -5,9 +5,27 @@
     <a>{{item}}</a>
   </li>
 </ul>
-
-<input type="number" [(ngModel)]="firstNumber"/>
-<input type="number" [(ngModel)]="secondNumber" />
-<input type="button" value="Guardar" (click)="calculateSum()"/>
+<div>
+  <input type="number" [(ngModel)]="firstNumber"/>
+  <input type="number" [(ngModel)]="secondNumber" />
+  <input type="button" value="Sumar" (click)="calculateSum()"/>
+  <br>
+  <span>Resultado: {{totalsum}}</span>
+</div>
 <br>
-<span>{{total}}</span>
+<div>
+  <input type="number" [(ngModel)]="first1"/>
+  <input type="number"[(ngModel)]="second2"/>
+  <input type="button" value="Multiplicar" (click)="calculateMulti()"/>
+  <br>
+  <span>Resultado: {{totalmulti}}</span>
+</div>
+<div>
+  <h3>Calcular años</h3>
+  <input type="number" [(ngModel)]="age"  />
+  <input type="button" value="Calcular" (click)="calculateAge()" />
+  <p *ngIf="calcAge > 18 else noMayor">Eres mayor de edad!</p>
+  <ng-template #noMayor>
+    <p>No eres mayor:(</p>
+  </ng-template>
+</div>

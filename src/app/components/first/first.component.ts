@@ -10,7 +10,13 @@ export class FirstComponent {
   public menu: string[] = ['Home', 'About', 'Contact', 'Settings', 'LogOut'];
   public firstNumber: number = 0;
   public secondNumber: number = 0;
-  public total: number = 0;
+  public totalsum: number = 0;
+  public first1: number = 0;
+  public second2: number = 0;
+  public totalmulti: number = 0;
+  public age: number = 0;
+  public year: number = 2023;
+  public calcAge: number = 0;
 
   changeListName(item: string) {
     const index = this.menu.indexOf(item);
@@ -18,7 +24,15 @@ export class FirstComponent {
   }
 
   calculateSum() {
-    this.total = this.firstNumber + this.secondNumber;
-    return this.firstNumber + this.secondNumber;
+    this.totalsum = this.firstNumber + this.secondNumber;
+    // * return this.firstNumber + this.secondNumber;
+  }
+
+  calculateMulti() {
+    this.totalmulti = this.first1 * this.second2;
+  }
+
+  calculateAge() {
+    this.calcAge = this.year - this.age;
   }
 }
