@@ -1,31 +1,47 @@
-<p>{{title}}</p>
-
-<ul>
-  <li *ngFor="let item of menu" (click)="changeListName(item)">
-    <a>{{item}}</a>
-  </li>
-</ul>
+<link href="./styles.scss">
 <div>
-  <input type="number" [(ngModel)]="firstNumber"/>
-  <input type="number" [(ngModel)]="secondNumber" />
-  <input type="button" value="Sumar" (click)="calculateSum()"/>
+  <p class="text-3xl font-bold underline text-center">{{title | first}}</p>
+  <ul>
+    <li *ngFor="let item of menu" (click)="changeListName(item)">
+      <a>{{item}}</a>
+    </li>
+  </ul>
   <br>
-  <span>Resultado: {{totalsum}}</span>
-</div>
-<br>
-<div>
-  <input type="number" [(ngModel)]="first1"/>
-  <input type="number"[(ngModel)]="second2"/>
-  <input type="button" value="Multiplicar" (click)="calculateMulti()"/>
+  <div>
+    <h3 class="text-2xl text-blue-950 font-medium">Sumar</h3>
+    <input type="number" [(ngModel)]="firstNumber"/>
+    <input type="number" [(ngModel)]="secondNumber"/>
+    <input type="button" value="Sumar" (click)="calculateSum()"/>
+    <br>
+    <span>Resultado: {{totalsum}}</span>
+  </div>
   <br>
-  <span>Resultado: {{totalmulti}}</span>
-</div>
-<div>
-  <h3>Calcular años</h3>
-  <input type="number" [(ngModel)]="age"  />
-  <input type="button" value="Calcular" (click)="calculateAge()" />
-  <p *ngIf="calcAge > 18 else noMayor">Eres mayor de edad!</p>
-  <ng-template #noMayor>
-    <p>No eres mayor:(</p>
-  </ng-template>
+  <div>
+    <h3 class="text-2xl text-blue-950 font-medium">Multiplicar</h3>
+    <input type="number" [(ngModel)]="first1"/>
+    <input type="number" [(ngModel)]="second2"/>
+    <input type="button" value="Multiplicar" (click)="calculateMulti()"/>
+    <br>
+    <span>Resultado: {{totalmulti}}</span>
+  </div>
+  <br>
+  <div>
+    <h3 class="text-2xl text-blue-950 font-medium">Calcular años</h3>
+    <input type="number" [(ngModel)]="age"/>
+    <input type="button" value="Calcular" (click)="calculateAge()"/>
+    <p class="text-green-600" *ngIf="calcAge > 18 else noMayor">eres mayor de edad!</p>
+    <ng-template #noMayor>
+      <p class="text-red-600">no eres mayor :(</p>
+    </ng-template>
+  </div>
+  <br>
+  <div>
+    <app-second [name]="nameSecondComponent"></app-second>
+  </div>
+  <br>
+  <div>
+    <h2 class="text-2xl text-blue-950 font-medium">Calcular impuesto</h2>
+    <app-second (calcTax)="IVA($event)"></app-second>
+    <p class="align-text-bottom">El total del impuesto es: {{ivaTotal}}</p>
+  </div>
 </div>

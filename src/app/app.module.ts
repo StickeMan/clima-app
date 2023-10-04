@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
 import { FormsModule } from "@angular/forms";
+import { SecondComponent } from './components/second/second.component';
+import { FirstPipe } from './pipes/first.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent
+    FirstComponent,
+    SecondComponent,
+    FirstPipe,
   ],
   imports: [
     BrowserModule,

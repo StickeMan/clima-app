@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./first.component.scss']
 })
 export class FirstComponent {
-  public title: string = 'Esto es el título de la primera página';
-  public menu: string[] = ['Home', 'About', 'Contact', 'Settings', 'LogOut'];
+  public title: string = 'esto es el título de la primera página';
+  public menu: string[] = ['home', 'about', 'contact', 'settings', 'logOut'];
   public firstNumber: number = 0;
   public secondNumber: number = 0;
   public totalsum: number = 0;
@@ -17,6 +17,12 @@ export class FirstComponent {
   public age: number = 0;
   public year: number = 2023;
   public calcAge: number = 0;
+  public nameSecondComponent: string = 'Soy Francisco';
+  public ivaTotal: number = 0;
+
+  IVA(iva: number): void {
+    this.ivaTotal = iva;
+  }
 
   changeListName(item: string) {
     const index = this.menu.indexOf(item);
@@ -35,4 +41,6 @@ export class FirstComponent {
   calculateAge() {
     this.calcAge = this.year - this.age;
   }
+
+  protected readonly event = event;
 }
