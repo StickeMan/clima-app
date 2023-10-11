@@ -7,6 +7,7 @@ import { FirstComponent } from './components/first/first.component';
 import { FormsModule } from "@angular/forms";
 import { SecondComponent } from './components/second/second.component';
 import { FirstPipe } from './pipes/first.pipe';
+import { ColorDirective } from './directive/color.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FirstPipe } from './pipes/first.pipe';
     FirstComponent,
     SecondComponent,
     FirstPipe,
+    ColorDirective,
   ],
   imports: [
     BrowserModule,

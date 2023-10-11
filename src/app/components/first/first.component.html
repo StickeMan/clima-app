@@ -44,4 +44,14 @@
     <app-second (calcTax)="IVA($event)"></app-second>
     <p class="align-text-bottom">El total del impuesto es: {{ivaTotal}}</p>
   </div>
+  <br>
+  <div>
+    <p class="text-center text-3xl" [ngStyle]="a ? {'cursor': 'cursor'} : {'cursor': 'allowed'}">Cursor</p>
+    <p class="text-center text-3xl" [ngStyle]="{'color': hover ? 'red' : 'blue'}" (mouseover)="onMouseOver()"
+       (mouseout)="onMouseOut()">Soy una directiva</p>
+  </div>
+  <br>
+  <div>
+    <p class="text-center text-3xl" appColor>Hello world</p>
+  </div>
 </div>

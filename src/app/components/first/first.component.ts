@@ -19,6 +19,16 @@ export class FirstComponent {
   public calcAge: number = 0;
   public nameSecondComponent: string = 'Soy Francisco';
   public ivaTotal: number = 0;
+  public a: string = '';
+  public hover: boolean = false;
+
+  onMouseOver(){
+    this.hover = true;
+  }
+
+  onMouseOut() {
+    this.hover = false;
+  }
 
   IVA(iva: number): void {
     this.ivaTotal = iva;
@@ -41,6 +51,4 @@ export class FirstComponent {
   calculateAge() {
     this.calcAge = this.year - this.age;
   }
-
-  protected readonly event = event;
 }
