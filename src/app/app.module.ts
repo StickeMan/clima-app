@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FirstComponent } from './components/first/first.component';
+import { FirstComponent, SecondComponent } from './components';
 import { FormsModule } from "@angular/forms";
-import { SecondComponent } from './components/second/second.component';
 import { FirstPipe } from './pipes/first.pipe';
 import { ColorDirective } from './directive/color.directive';
+import { ValidateAccessDirective } from './directive/validate-access.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,7 @@ import { ColorDirective } from './directive/color.directive';
     SecondComponent,
     FirstPipe,
     ColorDirective,
+    ValidateAccessDirective,
   ],
   imports: [
     BrowserModule,

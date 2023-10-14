@@ -7,7 +7,7 @@
     </li>
   </ul>
   <br>
-  <div>
+  <div [appValidateAccess]="data">
     <h3 class="text-2xl text-blue-950 font-medium">Sumar</h3>
     <input type="number" [(ngModel)]="firstNumber"/>
     <input type="number" [(ngModel)]="secondNumber"/>
@@ -16,7 +16,7 @@
     <span>Resultado: {{totalsum}}</span>
   </div>
   <br>
-  <div>
+  <div [appValidateAccess]="data">
     <h3 class="text-2xl text-blue-950 font-medium">Multiplicar</h3>
     <input type="number" [(ngModel)]="first1"/>
     <input type="number" [(ngModel)]="second2"/>
@@ -25,7 +25,7 @@
     <span>Resultado: {{totalmulti}}</span>
   </div>
   <br>
-  <div>
+  <div [appValidateAccess]="data">
     <h3 class="text-2xl text-blue-950 font-medium">Calcular años</h3>
     <input type="number" [(ngModel)]="age"/>
     <input type="button" value="Calcular" (click)="calculateAge()"/>
@@ -34,21 +34,15 @@
       <p class="text-red-600">no eres mayor :(</p>
     </ng-template>
   </div>
+<!--  <br>-->
+<!--&lt;!&ndash;  <div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <app-second [name]="nameSecondComponent"></app-second>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
   <br>
-  <div>
-    <app-second [name]="nameSecondComponent"></app-second>
-  </div>
-  <br>
-  <div>
+  <div [appValidateAccess]="data">
     <h2 class="text-2xl text-blue-950 font-medium">Calcular impuesto</h2>
     <app-second (calcTax)="IVA($event)"></app-second>
     <p class="align-text-bottom">El total del impuesto es: {{ivaTotal}}</p>
-  </div>
-  <br>
-  <div>
-    <p class="text-center text-3xl" [ngStyle]="a ? {'cursor': 'cursor'} : {'cursor': 'allowed'}">Cursor</p>
-    <p class="text-center text-3xl" [ngStyle]="{'color': hover ? 'red' : 'blue'}" (mouseover)="onMouseOver()"
-       (mouseout)="onMouseOut()">Soy una directiva</p>
   </div>
   <br>
   <div>

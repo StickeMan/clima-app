@@ -51,4 +51,10 @@ export class FirstComponent {
   calculateAge() {
     this.calcAge = this.year - this.age;
   }
+
+  public data = {
+    id: 1,
+    name: 'user1',
+    role: 3,
+  };
 }
